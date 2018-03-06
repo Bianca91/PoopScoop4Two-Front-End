@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import './App.css';
-import MainPage from './Containers/MainPage'
+import MainPage from './containers/MainPage'
 import Profile from './Containers/Profile'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 
