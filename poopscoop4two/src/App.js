@@ -1,12 +1,14 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { connect } from "react-redux";
-import Breed from "./components/dogComp";
+import React, { Component } from 'react';
+import './App.css';
+import MainPage from './Containers/MainPage'
 
 class App extends Component {
   render() {
-    return null
+    return (
+      <div className="App">
+        <MainPage/>
+      </div>
+    );
   }
 }
 
