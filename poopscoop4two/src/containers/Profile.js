@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Title from '../components/Title'
 import { connect } from 'react-redux'
 import User from '../components/User'
-import NavBar from '../components/navbar'
+import NavBar from '../components/Navbar'
 
 
 const user =
