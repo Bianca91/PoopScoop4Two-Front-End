@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-//import Dog from '../components/dog'
+import Dog from '../components/dog'
 import Title from '../components/Title'
 import { connect } from 'react-redux'
 import NavBar from '../components/navbar'
@@ -23,8 +23,9 @@ export class MainPage extends PureComponent {
       <div className="MainPage">
         <NavBar/>
         <Title content='PoopScoop4Two'/>
-        <button className='dislikeButton' onClick={handleDislikeButton}>"dislike"</button>
-        <button className='likeButton' onClick={handleLikeButton}>"like"</button>
+        <Dog/>
+        <button className='MainPageButton Dislike' onClick={handleDislikeButton}>"dislike"</button>
+        <button className='MainPageButton Like' onClick={handleLikeButton}>"like"</button>
       </div>
     )
   }
