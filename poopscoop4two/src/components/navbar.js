@@ -12,4 +12,4 @@ class NavBar extends PureComponent {
   }
 }
 
-export default Title
+export default NavBar
