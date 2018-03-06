@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 //import Dog from '../components/dog'
 import Title from '../components/Title'
 import { connect } from 'react-redux'
+import NavBar from '../components/navbar'
+
 const handleDislikeButton = (type) => {
   console.log("Dislike")
   }
@@ -18,6 +20,7 @@ export class MainPage extends PureComponent {
   render() {
     return (
       <div className="MainPage">
+        <NavBar/>
         <Title content="PoopScoop4Two"/>
         <button className='dislikeButton' onClick={handleDislikeButton}>"dislike"</button>
         <button className='likeButton' onClick={handleLikeButton}>"like"</button>
