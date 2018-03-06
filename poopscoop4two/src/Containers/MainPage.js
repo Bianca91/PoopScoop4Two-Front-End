@@ -23,8 +23,8 @@ export class MainPage extends PureComponent {
       <div className="MainPage">
         <NavBar/>
         <Title content='PoopScoop4Two'/>
-        <button className='dislikeButton' onClick={handleDislikeButton}>"dislike"</button>
-        <button className='likeButton' onClick={handleLikeButton}>"like"</button>
+        <button className='MainPageButton Dislike' onClick={handleDislikeButton}>"dislike"</button>
+        <button className='MainPageButton Like' onClick={handleLikeButton}>"like"</button>
       </div>
     )
   }
