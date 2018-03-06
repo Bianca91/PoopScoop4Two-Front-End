@@ -1,32 +1,26 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 //import Dog from '../components/dog'
-//import Title from '../components/Title'
+import Title from '../components/Title'
 import { connect } from 'react-redux'
-const handleButtonClick = (type) => {
-  switch(type) {
-  case "dislike":
-      console.log("dislike")
-      break;
-  case "like":
-      console.log("like")
-      break;
+const handleDislikeButton = (type) => {
+  console.log("Dislike")
   }
-}
+const handleLikeButton = (type) => {
+  console.log("Like")
+  }
 
 export class MainPage extends PureComponent {
   static propTypes = {
-    guesses: PropTypes.arrayOf(
-      PropTypes.string).isRequired,
-    awnser: PropTypes.string.isRequired
+    dog: PropTypes.string.isRequired
   }
 
   render() {
     return (
       <div className="MainPage">
-        <p>"PoopScoop4Two"</p>
-        <button className='dislikeButton' onClick={handleButtonClick}>"dislike"</button>
-        <button className='likeButton' onClick={handleButtonClick}>"like"</button>
+        <Title content="PoopScoop4Two"/>
+        <button className='dislikeButton' onClick={handleDislikeButton}>"dislike"</button>
+        <button className='likeButton' onClick={handleLikeButton}>"like"</button>
       </div>
     )
   }
