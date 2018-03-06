@@ -2,7 +2,7 @@
 
 1. Add remote: `$ git remote add origin git@github.com:Ruhtarduhd/PoopScoop4Two-Front-End.git`
 
-2. Pull the master branch `git pull`
+2. Pull the master branch `git pull origin master`
 
 3. Then install dependencies `yarn install`
 
