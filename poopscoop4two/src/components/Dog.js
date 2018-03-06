@@ -8,8 +8,9 @@ class DogImage extends PureComponent {
   };
 
   render() {
-    return;
-    <img src={this.props.image} />;
+    return (
+      <img src={this.props.image} />
+    )
   }
 }
 export default DogImage;
