@@ -1,4 +1,4 @@
-
+/*
 export const like = (like) => {
   return {
     type: 'like',
@@ -12,3 +12,4 @@ export const dislike = (dislike) => {
     payload: [dogBreed, userId]
   }
 }
+*/

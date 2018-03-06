@@ -1,11 +1,12 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import Dog from '../components/dog'
+import Dog from '../components/Dog'
 import Title from '../components/Title'
 import { connect } from 'react-redux'
-import NavBar from '../components/navbar'
+import NavBar from '../components/Navbar'
 import './mainpage.css'
 import {like as likeAction} from '../actions/dogActions'
+import {dislike as dislikeAction} from '../actions/dogActions'
 
 export class MainPage extends PureComponent {
   static propTypes = {
@@ -13,10 +14,12 @@ export class MainPage extends PureComponent {
   }
 
   handleDislikeButton = (event) => {
-    this.props.likeAction(event)
+    console.log(event)
+    //this.props.dislikeAction(event)
     }
   handleLikeButton = (event) => {
     console.log(event)
+    //this.props.dislikeAction(event)
     }
 
   render() {
