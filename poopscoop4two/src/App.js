@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import Title from './components/Title'
-import Title from './components/navbar'
+import MainPage from './Containers/MainPage'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-
+        <MainPage/>
       </div>
     );
   }
