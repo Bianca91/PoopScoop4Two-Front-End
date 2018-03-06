@@ -5,27 +5,28 @@ import Title from '../components/Title'
 import { connect } from 'react-redux'
 import NavBar from '../components/navbar'
 import './mainpage.css'
-
-const handleDislikeButton = (type) => {
-  console.log("Dislike")
-  }
-const handleLikeButton = (type) => {
-  console.log("Like")
-  }
+import {like as likeAction} from '../actions/dogActions'
 
 export class MainPage extends PureComponent {
   static propTypes = {
     dog: PropTypes.string.isRequired
   }
 
+  handleDislikeButton = (event) => {
+    this.props.likeAction(event)
+    }
+  handleLikeButton = (event) => {
+    console.log(event)
+    }
+
   render() {
     return (
       <div className="MainPage">
         <NavBar/>
         <Title content='PoopScoop4Two'/>
-        <Dog/>
-        <button className='MainPageButton Dislike' onClick={handleDislikeButton}>"dislike"</button>
-        <button className='MainPageButton Like' onClick={handleLikeButton}>"like"</button>
+        <dog/>
+        <button className='MainPageButton Dislike' onClick={this.handleDislikeButton}>"dislike"</button>
+        <button className='MainPageButton Like' onClick={this.handleLikeButton}>"like"</button>
       </div>
     )
   }
