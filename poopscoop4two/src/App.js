@@ -16,7 +16,7 @@ class App extends Component {
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/" component={MainPage} />
           <Route exact path="/user/:id" component={Profile} />
-          <Route exact path="Matches" component={Matches} />
+          <Route exact path="/matches" component={Matches} />
         </div>
       </Router>
     );
