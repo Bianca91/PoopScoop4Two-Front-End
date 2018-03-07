@@ -2,12 +2,10 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Dog from '../components/Dog'
 import Title from '../components/Title'
-import {getRandomDog} from '../actions/dog'
+import {getRandomDog, updateDog} from '../actions/dog'
 import { connect } from 'react-redux'
 import NavBar from '../components/Navbar'
 import './mainpage.css'
-import {like as likeAction} from '../actions/dogActions'
-import {dislike as dislikeAction} from '../actions/dogActions'
 
 
 export class MainPage extends PureComponent {
@@ -20,9 +18,11 @@ export class MainPage extends PureComponent {
   }
 
   handleDislikeButton = () => {
+    this.props.updateDog(this.getDogBreed(this.props.dog.image), 'DISLIKE')
     this.props.getRandomDog()
   }
   handleLikeButton = () => {
+    this.props.updateDog(this.getDogBreed(this.props.dog.image), 'LIKE')
     this.props.getRandomDog()
   }
 
@@ -51,4 +51,4 @@ const mapStateToProps = (reduxState) => {
   }
 }
 
-export default connect(mapStateToProps, {getRandomDog})(MainPage)
+export default connect(mapStateToProps, {getRandomDog, updateDog})(MainPage)

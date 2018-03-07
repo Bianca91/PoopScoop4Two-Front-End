@@ -20,13 +20,13 @@
 	text-decoration:none;
 	text-align:center;
 	text-shadow:1px 1px 0px #cc9f52;
+	transition: 0.2s;
 }
 .MainPageButton:hover {
 	background-color:#fb9e25;
 }
 .MainPageButton:active {
-	position:relative;
-	top:5px;
+	transform: translate3d(0px, 5px, 5px);
 }
 .Dislike {
 	left:30px;

@@ -3,9 +3,13 @@ import * as request from "superagent";
 
 export const USER_LOGIN_SUCCESS = "USER_LOGIN_SUCCESS";
 export const USER_LOGIN_FAILED = "USER_LOGIN_FAILED";
+<<<<<<< HEAD
 export const USER_SIGNUP_SUCCESS = "USER_SIGNUP_SUCCESS";
 export const USER_SIGNUP_FAILED = "USER_SIGNUP_FAILED";
 
+=======
+export const USER_LOGOUT_SUCCESS = "USER_LOGOUT_SUCCESS";
+>>>>>>> c0f3860120340c0d147032f251b405db6745bc80
 
 
 const baseUrl = "http://localhost:4001";
@@ -33,6 +37,7 @@ export const login = (email, password) => dispatch => {
     });
 };
 
+<<<<<<< HEAD
 export const signup = (email, password, name) => (dispatch) =>
 
   request
@@ -54,3 +59,12 @@ export const signup = (email, password, name) => (dispatch) =>
 				console.error(err)
 			}
 		})
+=======
+export const logout = () => {
+  console.log("logoutplz")
+  return {
+    type: USER_LOGOUT_SUCCESS,
+    payload: null
+  }
+}
+>>>>>>> c0f3860120340c0d147032f251b405db6745bc80
