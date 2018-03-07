@@ -6,8 +6,6 @@ import {getRandomDog, updateDog} from '../actions/dog'
 import { connect } from 'react-redux'
 import NavBar from '../components/Navbar'
 import './mainpage.css'
-import {like as likeAction} from '../actions/dogActions'
-import {dislike as dislikeAction} from '../actions/dogActions'
 
 
 export class MainPage extends PureComponent {
