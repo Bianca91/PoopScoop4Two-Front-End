@@ -1,3 +1,9 @@
+.NavBar{
+  position: fixed;
+  top:0px;
+  width: 100%;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
