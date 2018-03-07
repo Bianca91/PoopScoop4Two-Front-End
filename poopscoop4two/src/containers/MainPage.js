@@ -12,23 +12,27 @@ import {dislike as dislikeAction} from '../actions/dogActions'
 
 export class MainPage extends PureComponent {
   static propTypes = {
-    dog: PropTypes.string.isRequired
+    dog: PropTypes.object.isRequired
   }
 
   componentWillMount() {
     this.props.getRandomDog()
   }
 
-  handleDislikeButton = (event) => {
+  handleDislikeButton = () => {
     this.props.getRandomDog()
-    //this.props.dislikeAction(event)
   }
-  handleLikeButton = (event) => {
+  handleLikeButton = () => {
     this.props.getRandomDog()
-    //this.props.dislikeAction(event)
+  }
+
+  getDogBreed = (imageUrl) => {
+    return imageUrl.split('/')[5]
   }
 
   render() {
+    if (!this.props.dog.image) return null
+
     return (
       <div className="MainPage">
         <NavBar/>
@@ -46,4 +50,5 @@ const mapStateToProps = (reduxState) => {
      dog: reduxState.dog
   }
 }
+
 export default connect(mapStateToProps, {getRandomDog})(MainPage)
