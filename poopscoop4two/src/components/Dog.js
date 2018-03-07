@@ -9,7 +9,7 @@ class DogImage extends PureComponent {
 
   render() {
     return (
-      <img src={this.props.image} />
+      <img className="dog" src={this.props.image} />
     )
   }
 }

@@ -1,9 +1,16 @@
 import React, { PureComponent } from 'react'
+import './Navbar.css'
 
 class NavBar extends PureComponent {
   render() {
     return( [
-      <p>navbar</p>
+      <ul className="NavBar">
+        <li><a>Profile</a></li>
+        <li><a>Pet Shop</a></li>
+        <li><a>Dog Pound</a></li>
+        <li><a>Log Out</a></li>
+        <li class = "settings"><a>Settings</a></li>
+      </ul>
       /*<a className = "Link">{ this.props.content }</a>*/
       /*<a className = "Link">{ this.props.content }</a>*/
       /*<a className = "Link">{ this.props.content }</a>*/
