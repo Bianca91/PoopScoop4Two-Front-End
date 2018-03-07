@@ -1,3 +1,4 @@
+
 import * as request from 'superagent'
 
 const randomDogUrl = 'https://dog.ceo/api/breeds/image/random'

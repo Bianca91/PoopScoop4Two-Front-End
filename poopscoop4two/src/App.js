@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 
 
 
+
 class App extends Component {
 
   render() {
@@ -15,7 +16,7 @@ class App extends Component {
         <Router>
         <div>
           <Route exact path="/" component={MainPage} />
-          <Route exact path="/user/:id" component={Profile} />
+          <Route exact path="/users/:id" component={Profile} />
         </div>
       </Router>
       </div>
