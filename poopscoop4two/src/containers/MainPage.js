@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Dog from '../components/Dog'
 import Title from '../components/Title'
-import {getRandomDog, likeDog} from '../actions/dog'
+import {getRandomDog} from '../actions/dog'
 import { connect } from 'react-redux'
 import NavBar from '../components/Navbar'
 import './mainpage.css'
@@ -23,7 +23,7 @@ export class MainPage extends PureComponent {
     this.props.getRandomDog()
   }
   handleLikeButton = () => {
-    this.props.likeDog(1, this.getDogBreed(this.props.dog.image))
+    this.props.getRandomDog()
   }
 
   getDogBreed = (imageUrl) => {
@@ -37,9 +37,8 @@ export class MainPage extends PureComponent {
       <div className="MainPage">
         <NavBar/>
         <Title content='PoopScoop4Two'/>
-        {console.log(this.getDogBreed(this.props.dog.image))}
-        <Dog image={this.props.dog.image} />
         <button className='MainPageButton Dislike' onClick={this.handleDislikeButton}>"dislike"</button>
+        <Dog image={this.props.dog.image} />
         <button className='MainPageButton Like' onClick={this.handleLikeButton}>"like"</button>
       </div>
     )
@@ -51,4 +50,5 @@ const mapStateToProps = (reduxState) => {
      dog: reduxState.dog
   }
 }
-export default connect(mapStateToProps, {getRandomDog, likeDog})(MainPage)
+
+export default connect(mapStateToProps, {getRandomDog})(MainPage)

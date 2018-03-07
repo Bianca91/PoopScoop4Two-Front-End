@@ -1,3 +1,4 @@
+
 import * as request from 'superagent'
 
 const apiBaseUrl = 'http://localhost:4001'
@@ -12,6 +13,7 @@ export const getRandomDog = () => (dispatch) => {
     }))
     .catch(err => alert(err))
 }
+
 /*
 export const likeDog = (userId, breed) => (dispatch) => {
   const updates = request
