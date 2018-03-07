@@ -1,10 +1,14 @@
+.MainPage {
+	position: relative;
+	top:-20px;
+}
 .MainPageButton {
-	box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	position: relative;
 	background-color:#5222ff;
 	border-top-left-radius:42px;
 	border-top-right-radius:42px;
 	text-indent:-5.24px;
-	border:1px solid #eeb44f;
+	border:2px solid #eeb44f;
 	display:inline-block;
 	color:#ffffff;
 	font-size:8px;
@@ -22,11 +26,27 @@
 }
 .MainPageButton:active {
 	position:relative;
-	top:3px;
+	top:5px;
 }
 .Dislike {
+	left:30px;
   border-bottom-right-radius:42px;
 }
+.Dislike:active {
+	position:relative;
+}
 .Like {
+	right:30px;
   border-bottom-left-radius:42px;
+}
+.Like:active {
+	position:relative;
+}
+.dog {
+		border-top-left-radius:42px;
+		border-top-right-radius:42px;
+		position:center;
+    width: 27rem;
+    height: 27rem;
+		border:2px solid #eeb44f;
 }

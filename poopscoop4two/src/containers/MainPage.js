@@ -20,11 +20,11 @@ export class MainPage extends PureComponent {
   }
 
   handleDislikeButton = (event) => {
-    console.log(event)
+    this.props.getRandomDog()
     //this.props.dislikeAction(event)
   }
   handleLikeButton = (event) => {
-    console.log(event)
+    this.props.getRandomDog()
     //this.props.dislikeAction(event)
   }
 
@@ -33,8 +33,8 @@ export class MainPage extends PureComponent {
       <div className="MainPage">
         <NavBar/>
         <Title content='PoopScoop4Two'/>
-        <Dog image={this.props.dog.image} />
         <button className='MainPageButton Dislike' onClick={this.handleDislikeButton}>"dislike"</button>
+        <Dog image={this.props.dog.image} />
         <button className='MainPageButton Like' onClick={this.handleLikeButton}>"like"</button>
       </div>
     )
