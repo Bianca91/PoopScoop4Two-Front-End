@@ -6,9 +6,6 @@ import MainPage from './containers/MainPage'
 import Profile from './containers/Profile'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 
-
-
-
 class App extends Component {
 
   render() {
