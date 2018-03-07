@@ -4,20 +4,14 @@ import Title from '../components/Title'
 import { connect } from 'react-redux'
 import User from '../components/User'
 import NavBar from '../components/Navbar'
+import {getUser} from '../actions/getUser'
 
-
-const user =
-
-  {
-    id: 1,
-    name: 'Dog Lover',
-    email: "doggg@like.com"
-  }
 
 
 export class Profile extends PureComponent {
-  static propTypes = {
-    name: PropTypes.string.isRequired
+
+  componentWillMount(props) {
+    this.props.getUser((this.props.match.params.id))
   }
 
   render() {
@@ -25,11 +19,13 @@ export class Profile extends PureComponent {
       <div className="Profile">
         <NavBar/>
         <Title content="Profile page"/>
-        <User user={user} />
+          <User name={this.props.user.name}/>
+          
 
       </div>
     )
   }
 }
 
-export default Profile
+const mapStateToProps = ({ user }) => ({ user })
+export default connect(mapStateToProps, {getUser})(Profile)
