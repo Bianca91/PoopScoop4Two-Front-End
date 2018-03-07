@@ -20,6 +20,7 @@
 	text-decoration:none;
 	text-align:center;
 	text-shadow:1px 1px 0px #cc9f52;
+	transition: 0.2s;
 }
 .MainPageButton:hover {
 	background-color:#fb9e25;
