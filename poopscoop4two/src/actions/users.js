@@ -32,6 +32,7 @@ export const login = (email, password) => dispatch => {
 };
 
 export const logout = () => {
+  console.log("logoutplz")
   return {
     type: USER_LOGOUT_SUCCESS,
     payload: null
