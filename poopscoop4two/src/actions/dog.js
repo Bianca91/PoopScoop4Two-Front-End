@@ -14,16 +14,28 @@ export const getRandomDog = () => (dispatch) => {
     .catch(err => alert(err))
 }
 
-/*
-export const likeDog = (userId, breed) => (dispatch) => {
-  const updates = request
-    .get(`${apiBaseUrl}/users/${userId}`)
-    .then(response => {
-      const breedStats = Object.assign({}, response.body.breedStats)
-      console.log(breedStats)
-      return { ...breedStats, [breed]: breedStats[breed] ? breedStats[breed] + 1 : 1 }
-    })
+
+export const updateDog = (breed, likeOrDislike) => (dispatch, getState) => {
+  const currentUser = getState().currentUser
+  const breedStats = Object.assign({}, currentUser.breedStats)
+  let updates
+
+  switch (likeOrDislike) {
+    case 'LIKE':
+      updates = { ...breedStats, [breed]: breedStats[breed] ? breedStats[breed] + 1 : 1 }
+      break
+    case 'DISLIKE':
+      updates = { ...breedStats, [breed]: breedStats[breed] ? breedStats[breed] - 1 : -1 }
+      break
+  }
+
+  request
+    .patch(`${apiBaseUrl}/users/${currentUser.id}`)
+    .send({ breedStats: updates })
+    .then(response => dispatch({
+      type: 'UPDATE_BREED_STATS',
+      payload: { ...currentUser, breedStats: updates }
+    }))
   
   console.log(updates)
 }
-*/
