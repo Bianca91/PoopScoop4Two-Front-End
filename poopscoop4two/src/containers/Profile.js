@@ -19,9 +19,8 @@ export class Profile extends PureComponent {
       <div className="Profile">
         <NavBar/>
         <Title content="Profile page"/>
-          <User name={this.props.user.name}/>
-          
-
+          <User name={`name:${this.props.user.name}`}/>
+          <User email={`email:${this.props.user.email}`}/>
       </div>
     )
   }
