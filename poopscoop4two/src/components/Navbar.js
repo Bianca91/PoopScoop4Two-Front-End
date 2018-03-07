@@ -11,9 +11,9 @@ class NavBar extends PureComponent {
       { this.props.currentUser &&
         <li><a><Link to={ `/users/${this.props.currentUser.id}` }>Profile</Link></a></li>
 }
-        <li><a>Pet Shop</a></li>
+        <li><a><Link to={ `/` }>PetShop</Link></a></li>
         <li><a>Dog Pound</a></li>
-        <li className="logout"><a>Log Out</a></li>
+        <li className='logout'><a>Log Out</a></li>
         <li className="settings"><a>Settings</a></li>
       </ul>
       /*<a className = "Link">{ this.props.content }</a>*/
