@@ -5,11 +5,11 @@ export const USER_LOGIN_SUCCESS = "USER_LOGIN_SUCCESS";
 export const USER_LOGIN_FAILED = "USER_LOGIN_FAILED";
 
 
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://localhost:4001";
 
 export const login = (email, password) => dispatch => {
   request
-    .post(`${baseUrl}/login`)
+    .post(`${baseUrl}/logins`)
     .send({ email, password })
 
     .then(result => {
