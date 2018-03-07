@@ -9,6 +9,7 @@ class User extends PureComponent {
     user: PropTypes.shape({
       id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired
      })
   }
 
@@ -16,6 +17,7 @@ render() {
     return (
       <div>
         <h1>{ this.props.name}</h1>
+        <h1>{ this.props.email}</h1>
       </div>
     )}
 }
