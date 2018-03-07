@@ -2,8 +2,6 @@ import React, { PureComponent } from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 
-
-
 class User extends PureComponent {
 
   static propTypes = {
@@ -16,7 +14,7 @@ class User extends PureComponent {
 render() {
     return (
       <div>
-        <h1>{ this.props.name}</h1>
+        <h1>{ this.props.name }</h1>
       </div>
     )}
 }
