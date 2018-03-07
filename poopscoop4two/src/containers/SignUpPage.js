@@ -13,7 +13,6 @@ class SignUpPage extends PureComponent {
 		if (this.props.signup.success) return (
 			<Redirect to="/login" />
 		)
-
 		return (
 			<div>
 				<h1>Sign up</h1>
