@@ -1,11 +1,16 @@
 import React, { PureComponent } from 'react'
 import './Navbar.css'
+import {Link} from 'react-router-dom'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 class NavBar extends PureComponent {
   render() {
-    return( 
+    return(
       <ul className="NavBar">
-        <li><a>Profile</a></li>
+      { this.props.currentUser &&
+        <li><a><Link to={ `/users/${this.props.currentUser.id}` }>Profile</Link></a></li>
+}
         <li><a>Pet Shop</a></li>
         <li><a>Dog Pound</a></li>
         <li><a>Log Out</a></li>
@@ -20,4 +25,5 @@ class NavBar extends PureComponent {
   }
 }
 
-export default NavBar
+const mapStateToProps = ({ currentUser }) => ({ currentUser })
+export default connect(mapStateToProps)(NavBar)

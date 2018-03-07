@@ -15,16 +15,14 @@ export class Profile extends PureComponent {
   }
 
   render() {
+
     return (
       <div className="Profile">
-        <NavBar/>
+          <NavBar/>
         <Title content="Profile page"/>
           <User name={this.props.user.name}/>
-          
-
       </div>
-    )
-  }
+    )}
 }
 
 const mapStateToProps = ({ user }) => ({ user })
