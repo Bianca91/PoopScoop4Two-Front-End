@@ -24,11 +24,25 @@ li a {
     text-decoration: none;
 }
 
-li a:hover:not(.settings) {
-    background-color: #111;
+li a:hover:not(.logout) {
+  background-color: blue;
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
 }
+
 
 .settings{
     float: right;
     background-color: #5222ff;
+}
+
+.logout{
+  float: right;
+  background-color: red;
+  border-top-left-radius:10px;
+	border-top-right-radius:10px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
 }
