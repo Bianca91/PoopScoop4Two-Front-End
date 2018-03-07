@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import {Link} from 'react-router-dom'
 
 class LoginForm extends PureComponent {
   state = {};
@@ -42,6 +43,7 @@ class LoginForm extends PureComponent {
         </div>
 
         <button type="submit">Login</button>
+        <button><Link to={ `/signup` }>Sign up</Link></button>
       </form>
     );
   }
