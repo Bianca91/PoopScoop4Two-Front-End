@@ -1,5 +1,9 @@
-import dog from './dog'
+import dog from "./dog";
+import currentUser from "./currentUser";
+import login from "./login";
 
 export default {
-  dog
+  dog,
+  currentUser,
+  login
 };
