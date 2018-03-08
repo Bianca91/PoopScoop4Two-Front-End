@@ -8,10 +8,10 @@
 	border-top-left-radius:42px;
 	border-top-right-radius:42px;
 	text-indent:-5.24px;
-	border:2px solid #eeb44f;
+	border: 2px solid #888;
 	display:inline-block;
-	color:#ffffff;
-	font-size:8px;
+	color:#fff;
+	font-size:15px;
 	font-weight:bold;
 	font-style:normal;
 	height:85px;
@@ -19,14 +19,15 @@
 	width:85px;
 	text-decoration:none;
 	text-align:center;
-	text-shadow:1px 1px 0px #cc9f52;
+	text-shadow:1px 1px 0px #444;
 	transition: 0.2s;
-}
-.MainPageButton:hover {
-	background-color:#fb9e25;
 }
 .MainPageButton:active {
 	transform: translate3d(0px, 5px, 0px);
+	text-decoration: none;
+}
+.MainPageButton:focus {
+	outline-style: none;
 }
 .Dislike {
 	left:30px;
@@ -35,6 +36,9 @@
 .Dislike:active {
 	position:relative;
 }
+.Dislike:hover {
+	background-color: #DF0101;
+}
 .Like {
 	right:30px;
   border-bottom-left-radius:42px;
@@ -42,11 +46,14 @@
 .Like:active {
 	position:relative;
 }
+.Like:hover {
+	background-color: #04B404;
+}
 .dog {
 		border-top-left-radius:42px;
 		border-top-right-radius:42px;
 		position:center;
     width: 27rem;
     height: 27rem;
-		border:2px solid #eeb44f;
+		border: 3px solid #888;
 }

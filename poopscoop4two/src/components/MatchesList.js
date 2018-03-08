@@ -14,12 +14,12 @@ class MatchesList extends PureComponent {
 render() {
 
   if(!this.props.matches) return null
-  
+
     return (
       <div>
         <ul className='Pound'>
           {this.props.matches.map( user =>
-            <li><h1>{user.name} = {user.email}</h1></li>)}
+            <li>{user.name} = {user.email}</li>)}
         </ul>
       </div>
     )}
