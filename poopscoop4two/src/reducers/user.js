@@ -8,10 +8,10 @@ export default function(state = {}, action) {
     default:
       return state;
     case UPDATE_USER:
-      return state.map(product => {
-        if (product.id === action.payload.id) {
+      return state.map(user => {
+        if (user.id === action.payload.id) {
           return action.payload;
-        } else return product;
+        } else return state;
       });
   }
 }

@@ -5,6 +5,7 @@ import React, { PureComponent } from "react";
 import { getUser } from "../actions/getUser";
 import { updateUser } from "../actions/getUser";
 import Title from "../components/Title";
+import NavBar from "../components/Navbar";
 
 class EditProfile extends PureComponent {
   state = {
@@ -31,6 +32,7 @@ class EditProfile extends PureComponent {
     if (!user) return null;
     return (
       <div>
+        <NavBar />
         <Title content="PoopScoop4Two" />
         <br />
         <br />

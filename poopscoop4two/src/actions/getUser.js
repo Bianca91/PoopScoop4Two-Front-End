@@ -19,7 +19,7 @@ export const getUser = userId => dispatch => {
 
 export const updateUser = (userId, updates) => dispatch => {
   request
-    .patch(`${userurl}/users/${userId}`)
+    .patch(`${userurl}/${userId}`)
     .send({ updates })
     .then(response =>
       dispatch({
