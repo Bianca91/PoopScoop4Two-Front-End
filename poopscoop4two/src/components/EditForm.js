@@ -17,6 +17,7 @@ class EditForm extends PureComponent {
   };
 
   render() {
+    const initialValues = this.props.initialValues || {};
     return (
       <form onSubmit={this.handleSubmit}>
         <div>
@@ -25,7 +26,7 @@ class EditForm extends PureComponent {
             type="email"
             name="email"
             id="email"
-            value={this.state.email || ""}
+            value={this.state.email || initialValues.email || ""}
             onChange={this.handleChange}
           />
         </div>
@@ -36,7 +37,7 @@ class EditForm extends PureComponent {
             type="password"
             name="password"
             id="password"
-            value={this.state.password || ""}
+            value={this.state.password || initialValues.name || ""}
             onChange={this.handleChange}
           />
         </div>
@@ -47,7 +48,7 @@ class EditForm extends PureComponent {
             type="password"
             name="confirmPassword"
             id="confirmPassword"
-            value={this.state.confirmPassword || ""}
+            value={this.state.confirmPassword || initialValues.name || ""}
             onChange={this.handleChange}
           />
         </div>
@@ -58,7 +59,7 @@ class EditForm extends PureComponent {
             type="name"
             name="name"
             id="name"
-            value={this.state.name || ""}
+            value={this.state.name || initialValues.name || ""}
             onChange={this.handleChange}
           />
         </div>
