@@ -5,21 +5,16 @@ import PropTypes from 'prop-types'
 class User extends PureComponent {
 
   static propTypes = {
-    user: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    breedStats: PropTypes.array.isRequired
-     })
+  user: PropTypes.object.isRequired
   }
 
 render() {
+
     return (
       <div>
-        <h1>{ this.props.name}</h1>
-        <h1>{ this.props.email}</h1>
-        <h1>{ this.props.breedStats}</h1>
-      </div>
+        <h1>Name: {this.props.user.name}</h1>
+        <h1>Email: {this.props.user.email}</h1>
+  </div>
     )}
 }
 

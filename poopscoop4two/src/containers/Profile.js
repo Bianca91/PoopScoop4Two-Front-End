@@ -18,9 +18,11 @@ export class Profile extends PureComponent {
       <div className="Profile">
           <NavBar/>
         <Title content="Profile page"/>
-          <User name={`name:${this.props.user.name}`}/>
-          <User email={`email:${this.props.user.email}`}/>
-          <User dogbreeds={`favbreed:${this.props.user.breedStats}`}/>
+          <User user={this.props.user}/>
+          <ul className='Pound'>
+            <Title content="Your top 10 favourite dogs"/>
+            {this.props.user.breedStats.slice(0,10).map(breeds => <li>{breeds.breed}</li>)}
+          </ul>
       </div>
     )}
 }
