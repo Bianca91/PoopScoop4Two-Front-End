@@ -28,6 +28,8 @@ export const updateDog = (breed, likeOrDislike) => (dispatch, getState) => {
     case 'DISLIKE':
       updates = { ...breedStats, [breed]: breedStats[breed] ? breedStats[breed] - 1 : -1 }
       break
+    default:
+      break
   }
 
   request

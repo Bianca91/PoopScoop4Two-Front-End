@@ -1,6 +1,4 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import Title from '../components/Title'
 import NavBar from '../components/Navbar'
 import MatchesList from '../components/MatchesList'

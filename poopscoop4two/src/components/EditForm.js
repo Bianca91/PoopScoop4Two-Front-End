@@ -37,7 +37,7 @@ class EditForm extends PureComponent {
             type="password"
             name="password"
             id="password"
-            value={this.state.password || initialValues.name || ""}
+            value={""}
             onChange={this.handleChange}
           />
         </div>
@@ -48,7 +48,7 @@ class EditForm extends PureComponent {
             type="password"
             name="confirmPassword"
             id="confirmPassword"
-            value={this.state.confirmPassword || initialValues.name || ""}
+            value={""}
             onChange={this.handleChange}
           />
         </div>

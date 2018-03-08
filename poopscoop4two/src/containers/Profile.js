@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import Title from '../components/Title'
 import { connect } from 'react-redux'
 import User from '../components/User'
@@ -15,13 +14,13 @@ export class Profile extends PureComponent {
   }
 
   render() {
-
     return (
       <div className="Profile">
           <NavBar/>
         <Title content="Profile page"/>
           <User name={`name:${this.props.user.name}`}/>
           <User email={`email:${this.props.user.email}`}/>
+          <User dogbreeds={`favbreed:${this.props.user.breedStats}`}/>
       </div>
     )}
 }

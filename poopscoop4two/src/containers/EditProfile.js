@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import EditForm from "../components/EditForm";
 import { connect } from "react-redux";
 import React, { PureComponent } from "react";
