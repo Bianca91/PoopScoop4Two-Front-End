@@ -1,5 +1,5 @@
 import { FETCHED_USER } from "../actions/getUser";
-import { UPDATE_USERS } from "../actions/updateUsers";
+import { UPDATE_USER } from "../actions/getUser";
 
 export default function(state = {}, action) {
   switch (action.type) {
@@ -7,7 +7,7 @@ export default function(state = {}, action) {
       return action.payload;
     default:
       return state;
-    case UPDATE_USERS:
+    case UPDATE_USER:
       if (action.payload.id === state.id) {
         return action.payload;
       } else return state;

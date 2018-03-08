@@ -3,7 +3,7 @@ import EditForm from "../components/EditForm";
 import { connect } from "react-redux";
 import React, { PureComponent } from "react";
 import { getUser } from "../actions/getUser";
-import { updateUsers } from "../actions/updateUsers";
+import { updateUser } from "../actions/getUser";
 import Title from "../components/Title";
 
 class EditProfile extends PureComponent {
@@ -17,8 +17,8 @@ class EditProfile extends PureComponent {
     });
   };
 
-  updateUsers = user => {
-    this.props.updateUsers(this.props.match.params.id, user);
+  updateUser = user => {
+    this.props.updateUser(this.props.match.params.id, user);
     this.toggleEdit();
   };
 
@@ -39,7 +39,7 @@ class EditProfile extends PureComponent {
 
         {!this.state.edit && (
           <div>
-            <EditForm initialValues={user} onSubmit={this.updateUsers} />
+            <EditForm initialValues={user} onSubmit={this.updateUser} />
           </div>
         )}
       </div>
@@ -48,4 +48,4 @@ class EditProfile extends PureComponent {
 }
 const mapStateToProps = ({ user }) => ({ user });
 
-export default connect(mapStateToProps, { getUser, updateUsers })(EditProfile);
+export default connect(mapStateToProps, { getUser, updateUser })(EditProfile);
