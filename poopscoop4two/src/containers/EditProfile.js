@@ -29,9 +29,11 @@ class EditProfile extends PureComponent {
   render() {
     const { user } = this.props;
     if (!user) return null;
-
     return (
       <div>
+        <Title content="PoopScoop4Two" />
+        <br />
+        <br />
         <h1>Edit your Profile</h1>
         {this.state.edit && <EditForm initialValues={user} onSubmit={null} />}
 
