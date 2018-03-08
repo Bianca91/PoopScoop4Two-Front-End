@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
 import './App.css';
 import LoginPage from "./containers/LoginPage";
 import SignUpPage from "./containers/SignUpPage";
@@ -7,7 +6,7 @@ import MainPage from './containers/MainPage'
 import Profile from './containers/Profile'
 import Matches from './containers/Matches'
 import EditProfile from './containers/EditProfile'
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 
 class App extends Component {
