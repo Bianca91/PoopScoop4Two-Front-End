@@ -1,14 +1,15 @@
 .MainPage {
 	position: relative;
 	top:-20px;
+	font-family: 'Roboto';
 }
 .MainPageButton {
 	position: relative;
 	background-color:#5222ff;
 	border-top-left-radius:42px;
 	border-top-right-radius:42px;
+	border: none;
 	text-indent:-5.24px;
-	border: 2px solid #888;
 	display:inline-block;
 	color:#fff;
 	font-size:15px;
@@ -55,5 +56,4 @@
 		position:center;
     width: 27rem;
     height: 27rem;
-		border: 3px solid #888;
 }
