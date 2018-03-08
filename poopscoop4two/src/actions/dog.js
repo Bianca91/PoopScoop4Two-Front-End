@@ -37,5 +37,5 @@ export const updateDog = (breed, likeOrDislike) => (dispatch, getState) => {
       payload: { ...currentUser, breedStats: updates }
     }))
   
-  console.log(updates)
+  console.log()
 }

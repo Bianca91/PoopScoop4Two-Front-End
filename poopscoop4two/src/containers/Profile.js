@@ -22,6 +22,7 @@ export class Profile extends PureComponent {
         <Title content="Profile page"/>
           <User name={`name:${this.props.user.name}`}/>
           <User email={`email:${this.props.user.email}`}/>
+          {console.log(this.props.user)}
       </div>
     )}
 }
