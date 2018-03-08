@@ -6,14 +6,10 @@ import { getUser } from "../actions/getUser";
 import { updateUsers } from "../actions/updateUsers";
 import Title from "../components/Title";
 
-export class EditProfile extends PureComponent {
+class EditProfile extends PureComponent {
   state = {
     edit: false
   };
-
-  componentWillMount(props) {
-    this.props.getUser(this.props.match.params.id);
-  }
 
   toggleEdit = () => {
     this.setState({
@@ -26,28 +22,28 @@ export class EditProfile extends PureComponent {
     this.toggleEdit();
   };
 
+  componentWillMount(props) {
+    this.props.getUser(this.props.match.params.id);
+  }
+
   render() {
     const { user } = this.props;
     if (!user) return null;
 
     return (
-      <div className="EditProfile">
-        <Title content="Edit PoopScoop4Two Profile" />
-        <br />
-        <p>Type in your new email address and password</p>
-        <br />
+      <div>
+        <h1>Edit your Profile</h1>
         {this.state.edit && <EditForm initialValues={user} onSubmit={null} />}
 
-        <div>
-          {!this.state.edit && (
+        {!this.state.edit && (
+          <div>
             <EditForm initialValues={user} onSubmit={this.updateUsers} />
-          )}
-        </div>
+          </div>
+        )}
       </div>
     );
   }
 }
-
 const mapStateToProps = ({ user }) => ({ user });
 
 export default connect(mapStateToProps, { getUser, updateUsers })(EditProfile);

@@ -21,7 +21,7 @@ class NavBar extends PureComponent {
         <li><a><Link to={ `/` }>PetShop</Link></a></li>
         <li><a><Link to={ `/matches` }>Dog Pound</Link></a></li>
         <li className='logout' onClick={this.handleLogout}><a><Link to={ `/login` }>logout</Link></a></li>
-        <li className="settings"><a>Settings</a></li>
+        <li className="EditProfile"><a>Edit</a></li>
       </ul>
       /*<a className = "Link">{ this.props.content }</a>*/
       /*<a className = "Link">{ this.props.content }</a>*/

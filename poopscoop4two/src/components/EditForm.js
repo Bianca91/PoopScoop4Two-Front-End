@@ -17,15 +17,15 @@ class EditForm extends PureComponent {
   };
 
   render() {
-    const initialValues = this.props.initialValues || {};
     return (
       <form onSubmit={this.handleSubmit}>
         <div>
           <label htmlFor="email">Email</label>
           <input
+            type="email"
             name="email"
             id="email"
-            value={this.state.email || initialValues.email || ""}
+            value={this.state.email || ""}
             onChange={this.handleChange}
           />
         </div>
@@ -33,14 +33,43 @@ class EditForm extends PureComponent {
         <div>
           <label htmlFor="password">Password</label>
           <input
+            type="password"
             name="password"
             id="password"
-            value={this.state.password || initialValues.password || ""}
+            value={this.state.password || ""}
             onChange={this.handleChange}
           />
         </div>
 
-        <button type="submit">Save</button>
+        <div>
+          <label htmlFor="confirmPassword">Confirm password</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            id="confirmPassword"
+            value={this.state.confirmPassword || ""}
+            onChange={this.handleChange}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="name">What is your name?</label>
+          <input
+            type="name"
+            name="name"
+            id="name"
+            value={this.state.name || ""}
+            onChange={this.handleChange}
+          />
+        </div>
+
+        {this.state.password &&
+          this.state.confirmPassword &&
+          this.state.password !== this.state.confirmPassword && (
+            <p style={{ color: "red" }}>The passwords do not match!</p>
+          )}
+
+        <button type="submit">Edit</button>
       </form>
     );
   }
