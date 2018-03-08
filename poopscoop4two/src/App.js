@@ -9,6 +9,7 @@ import Matches from './containers/Matches'
 import EditProfile from './containers/EditProfile'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 
+
 class App extends Component {
 
   render() {

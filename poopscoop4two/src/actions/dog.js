@@ -16,8 +16,9 @@ export const getRandomDog = () => (dispatch) => {
 
 
 export const updateDog = (breed, likeOrDislike) => (dispatch, getState) => {
-  const currentUser = getState().currentUser
-  const breedStats = Object.assign({}, currentUser.breedStats)
+
+  const state = getState()
+  const breedStats = Object.assign({}, state.currentUser.breedStats)
   let updates
 
   switch (likeOrDislike) {
@@ -30,12 +31,13 @@ export const updateDog = (breed, likeOrDislike) => (dispatch, getState) => {
   }
 
   request
-    .patch(`${apiBaseUrl}/users/${currentUser.id}`)
+    .patch(`${apiBaseUrl}/users/${state.currentUser.id}`)
+    .set('Authorization', 'Bearer ${jwt}')
     .send({ breedStats: updates })
     .then(response => dispatch({
       type: 'UPDATE_BREED_STATS',
-      payload: { ...currentUser, breedStats: updates }
+      payload: { ...state.currentUser, breedStats: updates }
     }))
-  
+
   console.log(updates)
 }
