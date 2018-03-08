@@ -6,7 +6,9 @@ import SignUpPage from "./containers/SignUpPage";
 import MainPage from './containers/MainPage'
 import Profile from './containers/Profile'
 import Matches from './containers/Matches'
+import EditProfile from './containers/EditProfile'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
+
 
 class App extends Component {
 
@@ -19,6 +21,7 @@ class App extends Component {
           <Route exact path="/" component={MainPage} />
           <Route exact path="/users/:id" component={Profile} />
           <Route exact path="/matches" component={Matches} />
+          <Route exact path="/edit" component={EditProfile} />
         </div>
       </Router>
     );

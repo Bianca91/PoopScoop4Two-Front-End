@@ -50,9 +50,9 @@ export class MainPage extends PureComponent {
       <div className="MainPage">
         <NavBar/>
         <Title content='PoopScoop4Two'/>
-        <button className='MainPageButton Dislike' onClick={this.handleDislikeButton}>"dislike"</button>
+        <button className='MainPageButton Dislike' onClick={this.handleDislikeButton}>Dislike</button>
         <Dog image={this.props.dog.image} />
-        <button className='MainPageButton Like' onClick={this.handleLikeButton}>"like"</button>
+        <button className='MainPageButton Like' onClick={this.handleLikeButton}>Like</button>
       </div>
     )
   }
