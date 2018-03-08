@@ -2,19 +2,28 @@ import React, { PureComponent } from 'react'
 import './MatchesList.css'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
+import {getMatches} from '../actions/getMatches'
+
 
 class MatchesList extends PureComponent {
+
+  componentWillMount() {
+    this.props.getMatches()
+  }
+
 render() {
 
-  const allUsers = ['user1', 'user2', 'user3']
+  if(!this.props.matches) return null
 
     return (
       <div>
         <ul className='Pound'>
-          {allUsers.map( user => <li><h1>{user}</h1></li>)}
+          {this.props.matches.map( user =>
+            <li>{user.name} = {user.email}</li>)}
         </ul>
       </div>
     )}
 }
 
-export default MatchesList
+const mapStateToProps = ({ matches }) => ({ matches })
+export default connect(mapStateToProps, {getMatches})(MatchesList)

@@ -8,6 +8,7 @@
 
 .Pound li {
   float: none;
+  padding: 5px 0 5px 0;
 }
 
 .Pound li a {
