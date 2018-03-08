@@ -2,6 +2,7 @@
   position: fixed;
   top:0px;
   width: 100%;
+  font-family: 'Roboto';
 }
 
 ul {
@@ -34,10 +35,12 @@ li a:hover:not(.logout) {
     width: 145px;
     padding: -10rem;
     background-color: #5222ff;
+    font-family: 'Roboto';
 }
 
 .logout{
   float: right;
   width:145px;
   background-color: #DF0101;
+  font-family: 'Roboto';
 }
