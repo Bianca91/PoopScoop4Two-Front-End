@@ -6,22 +6,24 @@ import {getMatches} from '../actions/getMatches'
 
 
 class MatchesList extends PureComponent {
+
+  componentWillMount() {
+    this.props.getMatches()
+  }
+
 render() {
 
-  const allUsers = [
-    {name:'user1', email:'example1@email.com'},
-    {name:'user2', email:'example2@email.com'},
-    {name:'user3', email:'example3@email.com'}
-  ]
-
+  if(!this.props.matches) return null
+  
     return (
       <div>
         <ul className='Pound'>
-          {allUsers.map( user =>
+          {this.props.matches.map( user =>
             <li><h1>{user.name} = {user.email}</h1></li>)}
         </ul>
       </div>
     )}
 }
 
-export default MatchesList
+const mapStateToProps = ({ matches }) => ({ matches })
+export default connect(mapStateToProps, {getMatches})(MatchesList)

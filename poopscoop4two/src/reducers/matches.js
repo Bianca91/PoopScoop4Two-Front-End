@@ -1,15 +1,10 @@
-import { FETCHED_USER } from "../actions/getUser";
-import { UPDATE_USERS } from "../actions/updateUsers";
+import { FETCHED_USERS } from "../actions/getMatches";
 
-export default function(state = {}, action) {
+export default function(state = null, action) {
   switch (action.type) {
-    case FETCHED_USER:
+    case FETCHED_USERS:
       return action.payload;
     default:
       return state;
-    case UPDATE_USERS:
-      if (action.payload.id === state.id) {
-        return action.payload;
-      } else return state;
   }
 }
