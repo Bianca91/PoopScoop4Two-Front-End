@@ -1,0 +1,18 @@
+.Pound {
+  position: static;
+  text-align: center;
+  width: 100%;
+  list-style-type: none;
+  background-color: #fff;
+}
+
+.Pound li {
+  float: none;
+}
+
+.Pound li a {
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
