@@ -44,7 +44,7 @@ export class MainPage extends PureComponent {
     statsArray.sort((a, b) => {
       return Object.values(b)[0] - Object.values(a)[0]
     })
-    console.log(Object.keys(statsArray[0]))
+    //console.log(Object.keys(statsArray[0]))
 
     return (
       <div className="MainPage">
