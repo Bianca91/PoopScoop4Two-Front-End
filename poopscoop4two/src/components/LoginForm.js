@@ -43,7 +43,7 @@ class LoginForm extends PureComponent {
         </div>
 
         <button type="submit">Login</button>
-        <button><Link to={ `/signup` }>Sign up</Link></button>
+        <Link to={ `/signup` }><button>Sign up</button></Link>
       </form>
     );
   }

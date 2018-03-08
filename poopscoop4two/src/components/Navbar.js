@@ -2,8 +2,9 @@ import React, { PureComponent } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
 import { logout } from "../actions/users";
+
+
 
 class NavBar extends PureComponent {
   handleLogout = () => {
@@ -23,7 +24,7 @@ class NavBar extends PureComponent {
         )}
         <li>
           <a>
-            <Link to={`/`}>PetShop</Link>
+            <Link to={`/`}>Dog Park</Link>
           </a>
         </li>
         <li>
@@ -36,7 +37,7 @@ class NavBar extends PureComponent {
             <Link to={`/login`}>logout</Link>
           </a>
         </li>
-        <li>
+        <li className="settings">
           <a>
             <Link to={`/edit`}>Edit Profile</Link>
           </a>

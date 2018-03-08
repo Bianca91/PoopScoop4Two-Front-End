@@ -30,8 +30,21 @@ export class MainPage extends PureComponent {
     return imageUrl.split('/')[5]
   }
 
+
   render() {
-    if (!this.props.dog.image) return null
+    if (!this.props.dog.image && !this.props.currentUser) return null
+    const breedStats = Object.assign({}, this.props.currentUser.breedStats)
+
+    const statsArray = []
+
+    for(let key in breedStats) {
+      statsArray.push({[key]: breedStats[key]})
+    }
+
+    statsArray.sort((a, b) => {
+      return Object.values(b)[0] - Object.values(a)[0]
+    })
+    //console.log(Object.keys(statsArray[0]))
 
     return (
       <div className="MainPage">
@@ -47,7 +60,8 @@ export class MainPage extends PureComponent {
 
 const mapStateToProps = (reduxState) => {
   return {
-     dog: reduxState.dog
+     dog: reduxState.dog,
+     currentUser: reduxState.currentUser
   }
 }
 
