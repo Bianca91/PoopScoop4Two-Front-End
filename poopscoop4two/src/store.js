@@ -1,13 +1,32 @@
 import { createStore, applyMiddleware, combineReducers, compose } from "redux";
-import ReduxThunk from "redux-thunk";
+import { createLogger } from 'redux-logger'
+import { persistStore, persistCombineReducers } from 'redux-persist'
+import storage from 'redux-persist/es/storage'
+import thunk from 'redux-thunk';
 import reducers from "./reducers";
 
-const reducer = combineReducers(reducers);
+const loggerMiddleware = createLogger()
 
-const devTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
+const middleware = [thunk, loggerMiddleware]
 
-const enhancer = compose(applyMiddleware(ReduxThunk), devTools);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-const store = createStore(reducer, enhancer);
+const configureStore = composeEnhancers(
+  applyMiddleware(...middleware),
+)(createStore)
 
-export default store;
+const config = {
+  key: 'root',
+  storage,
+}
+
+const combinedReducer = persistCombineReducers(config, reducers)
+
+const createAppStore = () => {
+  let store = configureStore(combinedReducer)
+  let persistor = persistStore(store)
+
+  return { persistor, store }
+}
+
+export default createAppStore
