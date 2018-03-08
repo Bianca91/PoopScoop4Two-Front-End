@@ -19,7 +19,7 @@ render() {
       <div>
         <ul className='Pound'>
           {this.props.matches.map( user =>
-            <li>{user.name} = {user.email}</li>)}
+            <li>{user.name} - {user.email} - {user.breedStats[0].breed}</li>)}
         </ul>
       </div>
     )}
