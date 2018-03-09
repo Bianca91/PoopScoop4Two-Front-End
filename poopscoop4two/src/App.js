@@ -6,7 +6,8 @@ import MainPage from './containers/MainPage'
 import Profile from './containers/Profile'
 import Matches from './containers/Matches'
 import EditProfile from './containers/EditProfile'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import NotFound from './components/NotFound'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
 class App extends Component {
@@ -15,12 +16,15 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Route exact path="/login" component={LoginPage} />
-          <Route exact path="/signup" component={SignUpPage} />
-          <Route exact path="/" component={MainPage} />
-          <Route exact path="/users/:id" component={Profile} />
-          <Route exact path="/matches" component={Matches} />
-          <Route exact path="/edit" component={EditProfile} />
+          <Switch>
+            <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/signup" component={SignUpPage} />
+            <Route exact path="/" component={MainPage} />
+            <Route exact path="/users/:id" component={Profile} />
+            <Route exact path="/matches" component={Matches} />
+            <Route exact path="/edit" component={EditProfile} />
+            <Route path="*" component={NotFound} />
+          </Switch>
         </div>
       </Router>
     );

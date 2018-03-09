@@ -31,6 +31,7 @@ class LoginForm extends PureComponent {
           />
         </div>
 
+
         <div>
           <label htmlFor="password">Password</label>
           <input
