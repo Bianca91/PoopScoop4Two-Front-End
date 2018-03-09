@@ -20,7 +20,7 @@ class LoginForm extends PureComponent {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <div>
+        {/*<div>
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -29,9 +29,23 @@ class LoginForm extends PureComponent {
             value={this.state.email || ""}
             onChange={this.handleChange}
           />
+        </div>*/}
+
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="email" name="email" id="email" onChange={this.handleChange} />
+          <label class="mdl-textfield__label" htmlFor="email">Email..</label>
         </div>
 
-        <div>
+        <br/>
+
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="password" name="password" id="password" onChange={this.handleChange} />
+          <label class="mdl-textfield__label" htmlFor="password">Password..</label>
+        </div>        
+
+        <br/>
+
+        {/*<div>
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -40,10 +54,12 @@ class LoginForm extends PureComponent {
             value={this.state.password || ""}
             onChange={this.handleChange}
           />
-        </div>
+        </div>*/}
 
-        <button type="submit">Login</button>
-        <Link to={ `/signup` }><button>Sign up</button></Link>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Login</button>
+        <br/>
+        <br/>
+        <Link to={ `/signup` }><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Sign up</button></Link>
       </form>
     );
   }

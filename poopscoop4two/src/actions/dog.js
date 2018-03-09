@@ -19,6 +19,7 @@ export const updateDog = (breed, likeOrDislike) => (dispatch, getState) => {
   const state = getState()
   const breedStats = state.currentUser.breedStats.concat()
   const breedIndex = breedStats.findIndex(b => b.breed === breed)
+  const totalVotes = state.currentUser.totalVotes
   const jwt = state.currentUser.jwt
   let updates
 
@@ -51,7 +52,7 @@ export const updateDog = (breed, likeOrDislike) => (dispatch, getState) => {
     .send({ breedStats: updates })
     .then(response => dispatch({
       type: 'UPDATE_BREED_STATS',
-      payload: { ...state.currentUser, breedStats: updates }
+      payload: { ...state.currentUser, breedStats: updates, totalVotes: totalVotes + 1 }
     }))
 
   console.log(updates)
