@@ -7,6 +7,7 @@ import Profile from './Profile'
 import {getRandomDog, updateDog} from '../actions/dog'
 import {getUser} from '../actions/getUser'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import NavBar from '../components/Navbar'
 import './mainpage.css'
 
@@ -60,6 +61,10 @@ export class MainPage extends PureComponent {
 
 
   render() {
+    if (!this.props.currentUser) return (
+      <Redirect to="/login" />
+    )
+
     if (!this.props.dog.image && !this.props.currentUser) return null
     const breedStats = Object.assign({}, this.props.currentUser.breedStats)
 

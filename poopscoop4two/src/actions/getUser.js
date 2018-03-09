@@ -5,7 +5,7 @@ const userurl = "http://localhost:4001";
 export const FETCHED_USER = "FETCHED_USER";
 export const UPDATE_USER = "UPDATE_USER";
 
-export const getUser = userId => dispatch => {
+export const getUser = (userId) => dispatch => {
   request
     .get(`${userurl}/users/${userId}`)
     .then(response =>
@@ -17,10 +17,11 @@ export const getUser = userId => dispatch => {
     .catch(err => alert(err));
 };
 
-export const updateUser = (userId, updates) => dispatch => {
+export const updateUser = (userId, name, email, password) => (dispatch,getState) => {
+const userId = getState().currentUser.id
   request
-    .patch(`${userurl}/${userId}`)
-    .send({ updates })
+    .patch(`${userurl}/users/${userId}`)
+    .send({ name, email, password })
     .then(response =>
       dispatch({
         type: UPDATE_USER,

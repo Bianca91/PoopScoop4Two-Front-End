@@ -34,13 +34,13 @@ li a:hover:not(.logout) {
     float: right;
     width: 145px;
     padding: -10rem;
-    background-color: #5222ff;
+    background-color: #7986CB;
     font-family: 'Roboto';
 }
 
 .logout{
   float: right;
   width:145px;
-  background-color: #DF0101;
+  background-color: #3F51B5;
   font-family: 'Roboto';
 }

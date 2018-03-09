@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import React, { PureComponent } from "react";
 import { getUser } from "../actions/getUser";
 import { updateUser } from "../actions/getUser";
+import {Redirect} from 'react-router-dom'
 import Title from "../components/Title";
 import NavBar from "../components/Navbar";
 
@@ -11,22 +12,19 @@ class EditProfile extends PureComponent {
     edit: false
   };
 
-  toggleEdit = () => {
-    this.setState({
-      edit: !this.state.edit
-    });
-  };
-
   updateUser = user => {
-    this.props.updateUser(this.props.match.params.id, user);
-    this.toggleEdit();
+    this.props.patchUser(this.props.match.params.id, user.name, user.email, user.password);
   };
 
-  componentWillMount(props) {
-    this.props.getUser(this.props.match.params.id);
+
+  componentWillUpdate() {
+    this.props.updateUser();
   }
 
   render() {
+    if (!this.props.currentUser) return (
+      <Redirect to="/login" />
+    )
     const { user } = this.props;
     if (!user) return null;
     return (
@@ -36,17 +34,11 @@ class EditProfile extends PureComponent {
         <br />
         <br />
         <h1>Edit your Profile</h1>
-        {this.state.edit && <EditForm initialValues={user} onSubmit={null} />}
-
-        {!this.state.edit && (
-          <div>
-            <EditForm initialValues={user} onSubmit={this.updateUser} />
-          </div>
-        )}
+        <EditForm initialValues={user} onSubmit={this.updateUser} />
       </div>
     );
   }
 }
-const mapStateToProps = ({ user }) => ({ user });
+const mapStateToProps = ({ user, currentUser }) => ({ user, currentUser });
 
-export default connect(mapStateToProps, { getUser, updateUser })(EditProfile);
+export default connect(mapStateToProps, { patchUser: updateUser })(EditProfile);
