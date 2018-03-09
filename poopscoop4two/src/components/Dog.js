@@ -8,7 +8,8 @@ class DogImage extends PureComponent {
 
   render() {
     return (
-      <img className="dog" src={this.props.image} alt="dog"/>
+         <img className="dog" src={this.props.image} alt="dog"/>
+
     )
   }
 }

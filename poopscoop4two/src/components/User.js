@@ -11,10 +11,13 @@ class User extends PureComponent {
 render() {
 
     return (
-      <div>
-        <h1>Name: {this.props.user.name}</h1>
-        <h1>Email: {this.props.user.email}</h1>
-  </div>
+      <div class="container">
+        <div class="row col s2">
+          <p>{ this.props.name}</p>
+          <p>{ this.props.email}</p>
+          <p>{ this.props.breedStats}</p>
+        </div>
+      </div>
     )}
 }
 

@@ -3,7 +3,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../actions/users";
-
+import {showProfile} from '../containers/MainPage'
 
 
 class NavBar extends PureComponent {
@@ -14,25 +14,19 @@ class NavBar extends PureComponent {
 
   render() {
     return (
-      <ul className="NavBar">
-        {this.props.currentUser && (
-          <li>
-              <Link to={`/users/${this.props.currentUser.id}`}>Profile</Link>
-          </li>
-        )}
-        <li>
-            <Link to={`/`}>Dog Park</Link>
-        </li>
-        <li>
-            <Link to={`/matches`}>Dog Pound</Link>
-        </li>
-        <li className="logout" onClick={this.handleLogout}>
-            <Link to={`/login`}>logout</Link>
-        </li>
-        <li className="settings">
-            <Link to={`/edit`}>Edit Profile</Link>
-        </li>
-      </ul>
+
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+          <ul class="right hide-on-med-and-down">
+            <li onClick={this.showProfile}><a><i class="material-icons">search</i></a></li>
+            <li onClick={this.showProfile}><a href="badges.html"><i class="material-icons">view_module</i></a></li>
+            <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+            <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+          </ul>
+        </div>
+      </nav>
+
     );
   }
 }

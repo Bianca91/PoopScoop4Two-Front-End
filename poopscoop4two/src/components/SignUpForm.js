@@ -19,33 +19,46 @@ export default class LoginForm extends PureComponent {
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit}>
-				<div>
+			<div class="row">
+				<div class="col s4">
+				</div>
+				<div class="input-field col s4">
 					<label htmlFor="email">Email</label>
 					<input type="email" name="email" id="email" value={
 						this.state.email || ''
 					} onChange={ this.handleChange } />
 				</div>
-
-				<div>
+			</div>
+			<div class="row">
+				<div class="col s4">
+				</div>
+				<div class="input-field col s4">
 					<label htmlFor="password">Password</label>
 					<input type="password" name="password" id="password" value={
 						this.state.password || ''
 					} onChange={ this.handleChange } />
 				</div>
-
-				<div>
+			</div>
+			<div class="row">
+				<div class="col s4">
+				</div>
+				<div class="input-field col s4">
 					<label htmlFor="confirmPassword">Confirm password</label>
 					<input type="password" name="confirmPassword" id="confirmPassword" value={
 						this.state.confirmPassword || ''
 					} onChange={ this.handleChange } />
 				</div>
-
-				<div>
+			</div>
+			<div class="row">
+				<div class="col s4">
+				</div>
+				<div class="input-field col s4">
 					<label htmlFor="name">What is your name?</label>
-					<input type="name" name="name" id="name" value={
+					<input type="text" name="name" id="name" value={
 						this.state.name || ''
 					} onChange={ this.handleChange } />
 				</div>
+			</div>
 
 				{
 					this.state.password &&
@@ -53,8 +66,13 @@ export default class LoginForm extends PureComponent {
 					this.state.password !== this.state.confirmPassword &&
 					<p style={{color:'red'}}>The passwords do not match!</p>
 				}
-
-				<button type="submit">Sign up</button>
+				<button class="btn btn-large green darken-4 waves-effect waves-light z-depth-2" type="submit"><
+					i class="material-icons left">done<
+					/i>Sign Up<
+				/button>
+				<br/>
+				<p>Already have an acount?</p>
+				<a href="/login"class="waves-effect waves-green btn-flat">Log In</a>
 			</form>
 		)
 	}

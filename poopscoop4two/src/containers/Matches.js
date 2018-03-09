@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import Title from '../components/Title'
 import NavBar from '../components/Navbar'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
@@ -14,10 +13,14 @@ export class Matches extends PureComponent {
     )
 
     return (
-      <div className="DogPound">
-        <NavBar/>
-        <Title content="Dog Pound"/>
+      <div>
+      <div>
+      <NavBar/>
+      </div>
+      <div class="container">
+        <h4>"Dog Pound"</h4>
         <MatchesList />
+      </div>
       </div>
     )
   }
