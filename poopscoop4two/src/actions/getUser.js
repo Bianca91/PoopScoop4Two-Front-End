@@ -17,10 +17,11 @@ export const getUser = (userId) => dispatch => {
     .catch(err => alert(err));
 };
 
-export const updateUser = (userId, updates) => dispatch => {
+export const updateUser = (userId, name, email, password) => (dispatch,getState) => {
+const userId = getState().currentUser.id
   request
-    .patch(`${userurl}/${userId}`)
-    .send({ updates })
+    .patch(`${userurl}/users/${userId}`)
+    .send({ name, email, password })
     .then(response =>
       dispatch({
         type: UPDATE_USER,

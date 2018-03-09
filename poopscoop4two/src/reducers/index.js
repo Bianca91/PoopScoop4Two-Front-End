@@ -3,7 +3,8 @@ import currentUser from "./currentUser";
 import login from "./login";
 import user from "./user";
 import signup from "./signup";
-import matches from './matches';
+import matches from "./matches";
+import updateUser from "./updateUser";
 
 export default {
   dog,
@@ -11,5 +12,6 @@ export default {
   currentUser,
   login,
   signup,
-  matches
+  matches,
+  updateUser
 };
