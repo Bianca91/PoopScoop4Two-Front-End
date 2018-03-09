@@ -14,11 +14,7 @@ export class Matches extends PureComponent {
 
     return (
       <div>
-      <div>
-      <NavBar/>
-      </div>
       <div class="container">
-        <h4>"Dog Pound"</h4>
         <MatchesList />
       </div>
       </div>

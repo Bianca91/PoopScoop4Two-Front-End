@@ -21,10 +21,15 @@ export class Profile extends PureComponent {
 
     if (!this.props.user.breedStats) return null
     return (
-      <div class="container col s12">
-          <User name={`name:${this.props.user.name}`}/>
-          <User email={`email:${this.props.user.email}`}/>
-          <User breedStats={`Favorite breed:${this.props.user.breedStats[0].breed}`}/>
+      <div class="container col s12 white">
+        <ul class="collection">
+          <li class="collection-item avatar">
+              <span class="title">{`name:${this.props.user.name}`}</span>
+            <p>{`email:${this.props.user.email}`}<br/>
+               {`Favorite breed:${this.props.user.breedStats[0].breed}`}
+            </p>
+          </li>
+        </ul>
       </div>
     )}
 }

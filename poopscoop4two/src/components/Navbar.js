@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import { logout } from "../actions/users";
 import {showProfile} from '../containers/MainPage'
 
-
 class NavBar extends PureComponent {
   handleLogout = () => {
     console.log("logout");
@@ -14,18 +13,10 @@ class NavBar extends PureComponent {
 
   render() {
     return (
-
-      <nav>
-        <div class="nav-wrapper">
-          <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
-          <ul class="right hide-on-med-and-down">
-            <li onClick={this.showProfile}><a><i class="material-icons">search</i></a></li>
-            <li onClick={this.showProfile}><a href="badges.html"><i class="material-icons">view_module</i></a></li>
-            <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
-            <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+          <ul class="right">
+            <li onClick={this.handleLogout}><a href="/login"><i class="material-icons">exit_to_app</i></a>
+            </li>
           </ul>
-        </div>
-      </nav>
 
     );
   }

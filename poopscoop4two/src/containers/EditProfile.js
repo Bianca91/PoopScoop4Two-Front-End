@@ -29,9 +29,6 @@ class EditProfile extends PureComponent {
     if (!user) return null;
     return (
       <div>
-        <NavBar />
-        <Title content="PoopScoop4Two" />
-        <br />
         <br />
         <h1>Edit your Profile</h1>
         <EditForm initialValues={user} onSubmit={this.updateUser} />

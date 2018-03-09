@@ -81,20 +81,15 @@ export class MainPage extends PureComponent {
 
     return (
       <div className="MainPage">
-        <ul id="dropdown1" class="dropdown-content">
-          <li><a href="#!">one</a></li>
-          <li><a href="#!">two</a></li>
-          <li class="divider"></li>
-          <li><a href="#!">three</a></li>
-        </ul>
         <br/>
         <nav>
           <div class="nav-wrapper large">
             <a class="brand-logo left"><i class="large material-icons right">pets</i>PoopScoop4Two</a>
+            <NavBar/>
             <ul class="right">
-              <li onClick={this.showProfile}><a><i class="material-icons">account_box</i></a></li>
+              <li id="profile-trigger" onClick={this.showProfile}><a><i class="material-icons">account_box</i></a></li>
               <li onClick={this.showMatches}><a><i class="material-icons">contacts</i></a></li>
-              <li><a class="dropdown-trigger" ><i class="material-icons">more_vert</i></a></li>
+              <li><a href="/edit"><i class="material-icons">border_color</i></a></li>
             </ul>
           </div>
         </nav>
@@ -102,7 +97,7 @@ export class MainPage extends PureComponent {
         <div class="row">
         <div class="container col s4">
           {this.state.isShowProfile &&
-          <div class="card">
+          <div id="profile" class="card large scale-transition">
             <div class="card-image waves-effect waves-block waves-light">
               <img className="dog" class="activator" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"/>
             </div>
@@ -120,17 +115,19 @@ export class MainPage extends PureComponent {
         </div>
           <div class="col s4">
             <div class="card">
-              <div class="card-image">
+            <div class="card-image">
                 <Dog image={this.props.dog.image} />
-                <span class="card-title"></span>
-                <button class="btn-floating btn-large left hoverable halfway-fab" onClick={this.handleDislikeButton}><i class="material-icons left">exposure_neg_1</i></button>
+                <span class="card-title">Hate or Love</span>
+                <button class="btn-floating btn-large left hoverable halfway-fab" onClick={this.handleDislikeButton}><i class="material-icons left">sentiment_very_dissatisfied</i></button>
                 <button className='btn-floating btn-large right hoverable halfway-fab' onClick={this.handleLikeButton}><i class="material-icons left">pets</i></button>
+              </div>
+              <div class="card-content">
               </div>
             </div>
           </div>
           <div class="container col s4">
             {this.state.isShowMatches &&
-            <div class="card">
+            <div class="card large">
               <div class="card-image waves-effect waves-block waves-light">
                 <img className="dog" class="activator" src="http://www.chittering.wa.gov.au/sites/chitteringwagovau/assets/public/Image/Community/MULTIPLE-DOGS.jpg"/>
               </div>
@@ -139,7 +136,7 @@ export class MainPage extends PureComponent {
               </div>
               <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">Matches<i class="material-icons right">close</i></span>
-              <div class="">
+              <div class="white">
                 <object data="http://localhost:3000/matches" >
                 </object>
               </div>

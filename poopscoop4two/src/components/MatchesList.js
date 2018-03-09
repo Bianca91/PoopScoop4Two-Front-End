@@ -15,72 +15,69 @@ render() {
   if(!this.props.matches) return null
 
     return (
-      <div className="matchlist">
-      <div class="container">
-        <table class="highlight">
-    <thead>
-      <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Favorite Breed</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <td>{this.props.matches[0].name}</td>
-        <td>{this.props.matches[0].email}</td>
-        <td>{this.props.matches[0].breedStats[0].breed}</td>
-      </tr>
-      <tr>
-        <td>{this.props.matches[1].name}</td>
-        <td>{this.props.matches[1].email}</td>
-        <td>{this.props.matches[1].breedStats[0].breed}</td>
-      </tr>
-      <tr>
-        <td>{this.props.matches[2].name}</td>
-        <td>{this.props.matches[2].email}</td>
-        <td>{this.props.matches[2].breedStats[0].breed}</td>
-      </tr>
-      <tr>
-        <td>{this.props.matches[3].name}</td>
-        <td>{this.props.matches[3].email}</td>
-        <td>{this.props.matches[3].breedStats[0].breed}</td>
-      </tr>
-      <tr>
-        <td>{this.props.matches[4].name}</td>
-        <td>{this.props.matches[4].email}</td>
-        <td>{this.props.matches[4].breedStats[0].breed}</td>
-      </tr>
-      <tr>
-        <td>{this.props.matches[5].name}</td>
-        <td>{this.props.matches[5].email}</td>
-        <td>{this.props.matches[5].breedStats[0].breed}</td>
-      </tr>
-      <tr>
-        <td>{this.props.matches[6].name}</td>
-        <td>{this.props.matches[6].email}</td>
-        <td>{this.props.matches[6].breedStats[0].breed}</td>
-      </tr>
-      <tr>
-        <td>{this.props.matches[7].name}</td>
-        <td>{this.props.matches[7].email}</td>
-        <td>{this.props.matches[7].breedStats[0].breed}</td>
-      </tr>
-      <tr>
-        <td>{this.props.matches[8].name}</td>
-        <td>{this.props.matches[8].email}</td>
-        <td>{this.props.matches[8].breedStats[0].breed}</td>
-      </tr>
-      <tr>
-        <td>{this.props.matches[9].name}</td>
-        <td>{this.props.matches[9].email}</td>
-        <td>{this.props.matches[9].breedStats[0].breed}</td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
-
+      <div class="container col s12 white ">
+        <ul class="collection white col s1 left">
+          <li class="collection-item avatar left">
+            <span class="title left">{this.props.matches[0].name}</span>
+            <p class="left">{this.props.matches[0].email}<br/>
+               {this.props.matches[0].breedStats[0].breed}
+            </p>
+          </li>
+          <li class="collection-item avatar left">
+            <span class="title left">{this.props.matches[1].name}</span>
+            <p class="left">{this.props.matches[1].email}<br/>
+               {this.props.matches[1].breedStats[0].breed}
+            </p>
+          </li>
+          <li class="collection-item avatar left">
+            <span class="title left">{this.props.matches[2].name}</span>
+            <p class="left">{this.props.matches[2].email}<br/>
+               {this.props.matches[2].breedStats[0].breed}
+            </p>
+          </li>
+          <li class="collection-item avatar left">
+            <span class="title left">{this.props.matches[3].name}</span>
+            <p class="left">{this.props.matches[3].email}<br/>
+               {this.props.matches[3].breedStats[0].breed}
+            </p>
+          </li>
+          <li class="collection-item avatar left">
+            <span class="title left">{this.props.matches[4].name}</span>
+            <p class="left">{this.props.matches[4].email}<br/>
+               {this.props.matches[4].breedStats[0].breed}
+            </p>
+          </li>
+          <li class="collection-item avatar left">
+            <span class="title left">{this.props.matches[5].name}</span>
+            <p class="left">{this.props.matches[5].email}<br/>
+               {this.props.matches[5].breedStats[0].breed}
+            </p>
+          </li>
+          <li class="collection-item avatar left">
+            <span class="title left">{this.props.matches[6].name}</span>
+            <p class="left">{this.props.matches[6].email}<br/>
+               {this.props.matches[6].breedStats[0].breed}
+            </p>
+          </li>
+          <li class="collection-item avatar left">
+            <span class="title left">{this.props.matches[7].name}</span>
+            <p class="left">{this.props.matches[7].email}<br/>
+               {this.props.matches[7].breedStats[0].breed}
+            </p>
+          </li>
+          <li class="collection-item avatar left">
+            <span class="title left">{this.props.matches[8].name}</span>
+            <p class="left">{this.props.matches[8].email}<br/>
+               {this.props.matches[8].breedStats[0].breed}
+            </p>
+          </li>
+          <li class="collection-item avatar left">
+            <span class="title left">{this.props.matches[9].name}</span>
+            <p class="left">{this.props.matches[9].email}<br/>
+               {this.props.matches[9].breedStats[0].breed}
+            </p>
+          </li>
+        </ul>
       </div>
     )}
 }
