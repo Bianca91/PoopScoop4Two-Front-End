@@ -15,12 +15,10 @@ export class Profile extends PureComponent {
 
   render() {
     return (
-      <div className="Profile">
-          <NavBar/>
-        <Title content="Profile page"/>
+      <div class="container col s12">
           <User name={`name:${this.props.user.name}`}/>
           <User email={`email:${this.props.user.email}`}/>
-          <User dogbreeds={`favbreed:${this.props.user.breedStats}`}/>
+          <User breedStats={`Favorite breed:${this.props.user.breedStats[0].breed}`}/>
       </div>
     )}
 }

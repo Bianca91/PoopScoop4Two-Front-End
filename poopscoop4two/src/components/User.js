@@ -15,10 +15,12 @@ class User extends PureComponent {
 
 render() {
     return (
-      <div>
-        <h1>{ this.props.name}</h1>
-        <h1>{ this.props.email}</h1>
-        <h1>{ this.props.breedStats}</h1>
+      <div class="container">
+        <div class="row col s2">
+          <p>{ this.props.name}</p>
+          <p>{ this.props.email}</p>
+          <p>{ this.props.breedStats}</p>
+        </div>
       </div>
     )}
 }
