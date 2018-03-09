@@ -1,11 +1,15 @@
+body {
+	background-color: #E8EAF6;
+}
 .MainPage {
 	position: relative;
 	top:-20px;
 	font-family: 'Roboto';
+	background-color: #E8EAF6;
 }
 .MainPageButton {
 	position: relative;
-	background-color:#5222ff;
+	background-color:#3F51B5;
 	border-top-left-radius:42px;
 	border-top-right-radius:42px;
 	border: none;

@@ -14,6 +14,7 @@ export class Profile extends PureComponent {
   }
 
   render() {
+    if (!this.props.user.breedStats) return null
     return (
       <div className="Profile">
           <NavBar/>
