@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import React, { PureComponent } from "react";
 import { getUser } from "../actions/getUser";
 import { updateUser } from "../actions/getUser";
+import {Redirect} from 'react-router-dom'
 import Title from "../components/Title";
 import NavBar from "../components/Navbar";
 
@@ -23,10 +24,13 @@ class EditProfile extends PureComponent {
   };
 
   componentWillMount(props) {
-    this.props.getUser(this.props.match.params.id);
+    //this.props.getUser(this.props.match.params.id);
   }
 
   render() {
+    if (!this.props.currentUser) return (
+      <Redirect to="/login" />
+    )
     const { user } = this.props;
     if (!user) return null;
     return (
@@ -47,6 +51,6 @@ class EditProfile extends PureComponent {
     );
   }
 }
-const mapStateToProps = ({ user }) => ({ user });
+const mapStateToProps = ({ user, currentUser }) => ({ user, currentUser });
 
 export default connect(mapStateToProps, { getUser, updateUser })(EditProfile);

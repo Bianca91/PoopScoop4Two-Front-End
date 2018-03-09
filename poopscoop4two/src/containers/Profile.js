@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import Title from '../components/Title'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import User from '../components/User'
 import NavBar from '../components/Navbar'
 import {getUser} from '../actions/getUser'
@@ -14,6 +15,10 @@ export class Profile extends PureComponent {
   }
 
   render() {
+    if (!this.props.currentUser) return (
+      <Redirect to="/login" />
+    )
+
     if (!this.props.user.breedStats) return null
     return (
       <div className="Profile">
@@ -28,5 +33,5 @@ export class Profile extends PureComponent {
     )}
 }
 
-const mapStateToProps = ({ user }) => ({ user })
+const mapStateToProps = ({ user, currentUser }) => ({ user, currentUser })
 export default connect(mapStateToProps, {getUser})(Profile)
